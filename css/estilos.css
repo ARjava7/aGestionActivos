@@ -1,0 +1,26 @@
+header{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+}
+nav{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height:auto;
+    background: rgb(205, 254, 255);
+}
+nav ul{
+    position:relative  ;
+    margin: auto;
+    width: 50%;
+    text-align: none;
+
+}
+nav ul li{
+display: inline-block;
+width: 24%;
+line-height: 50px;
+list-style: none;
+}
