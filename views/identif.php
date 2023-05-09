@@ -20,7 +20,8 @@ Identificación
     <nav>
     <ul>
         <li><a href="identif.php">Identificación</a></li>
-        <li><a href="valid.php">Validación</a></li>
+        <li><a href="validar.php">Validar</a></li>
+        <li><a href="valid.php">Validados</a></li>
 </ul>
 </nav>
 
@@ -90,19 +91,21 @@ Identificación
         <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Guardar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancelar</a>
     </div>
+
+
     <script type="text/javascript">
         var url;
                
 
         function newUser(){
-            $('#dlg').dialog('open').dialog('center').dialog('setTitle','Nuevo Estudiante');
+            $('#dlg').dialog('open').dialog('center').dialog('setTitle','Nuevo Activo');
             $('#fm').form('clear');
             url = '../models/guardar.php';
         }
         function editUser(){
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                $('#dlg').dialog('open').dialog('center').dialog('setTitle','Editar Estudiante');
+                $('#dlg').dialog('open').dialog('center').dialog('setTitle','Editar Activo');
                 $('#fm').form('load', row);
                 url = '../models/editar.php';
             }

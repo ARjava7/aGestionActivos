@@ -17,7 +17,7 @@
 <header>
 <img src="../images/logo.png" width="95%"  height="28%">
 </header>
-Validados
+Validar
     <nav>
     <ul>
         <li><a href="identif.php">Identificación</a></li>
