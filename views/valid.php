@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/estilos.css">
     <meta charset="UTF-8">
-    <title>ACTIVOS</title>
+    <title>VALIDADOS</title>
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.10.1/themes/black/easyui.css">
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.10.1/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.10.1/themes/color.css">
@@ -15,23 +15,28 @@
 </head>
 <body>
 
-    <nav>
-    <ul>
-        <li><a href="identif.php">Identificación</a></li>
-        <li><a href="validar.php">Validar</a></li>
-        <li><a href="valid.php">Validado</a></li>
-</ul>
+
+<nav>
+<ul>
+        <li><button class="button" name="button" onclick="window.location.href='identif.php'">Identificación Activos</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='validar.php'">Valorar Activos</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='valid.php'">Activos Valorados</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='identifAmenazas.php'">Identificación Amenazas</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='controles.php'">Controles</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='afectaciones.php'">Riesgos</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='riesgos.php'">Controles Mitigación</button></li>
+    </ul>
 </nav>
-<table id="dg" title="ACTIVOS SIN VALIDAR" class="easyui-datagrid" style="width:1500px;height:500px"
+<table id="dg" title="ACTIVOS VALORADOS" class="easyui-datagrid" style="width:1500px;height:500px"
             url="../models/cargarValidado.php"
             toolbar="#toolbar" pagination="true"
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>
-                <th field="id_act" width="10">#</th>
+                <th field="id_act" width="10">#q</th>
                 <th field="nombre_act" width="50">NOMBRE</th>
-                <th field="tipo_act" width="40">IDENTIFICACIÓN</th>
-                <th field="valoracion_act" width="50">VALIDACIÓN</th>
+                <th field="clasif_act" width="40">CLASIFICACIÓN</th>
+                <th field="valoracion_act" width="50">VALORACIÓN</th>
                 
             </tr>
         </thead>
