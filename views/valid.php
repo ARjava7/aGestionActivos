@@ -14,18 +14,15 @@
 
 </head>
 <body>
-<header>
-<img src="../images/logo.png" width="95%"  height="28%">
-</header>
-Validados
+
     <nav>
     <ul>
         <li><a href="identif.php">Identificación</a></li>
         <li><a href="validar.php">Validar</a></li>
-        <li><a href="valid.php">Validación</a></li>
+        <li><a href="valid.php">Validado</a></li>
 </ul>
 </nav>
-<table id="dg" title="ACTIVOS" class="easyui-datagrid" style="width:1500px;height:500px"
+<table id="dg" title="ACTIVOS SIN VALIDAR" class="easyui-datagrid" style="width:1500px;height:500px"
             url="../models/cargarValidado.php"
             toolbar="#toolbar" pagination="true"
             rownumbers="true" fitColumns="true" singleSelect="true">

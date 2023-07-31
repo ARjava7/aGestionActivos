@@ -13,20 +13,17 @@
     <script type="text/javascript" src="../jquery-easyui-1.10.1/plugins/jquery.form.js"></script>
 </head>
 <body>
-<header>
-<img src="../images/logo.png" width="95%"  height="28%">
-</header>
-Identificación
+
     <nav>
     <ul>
         <li><a href="identif.php">Identificación</a></li>
         <li><a href="validar.php">Validar</a></li>
-        <li><a href="valid.php">Validados</a></li>
+        <li><a href="valid.php">Validado</a></li>
 </ul>
 </nav>
 
  
-<table id="dg" title="ACTIVOS" class="easyui-datagrid" style="width:1500px;height:500px"
+<table id="dg" title="IDENTIFICAR ACTIVOS" class="easyui-datagrid" style="width:1500px;height:500px"
             url="../models/cargar.php"
             toolbar="#toolbar" pagination="true"
             rownumbers="true" fitColumns="true" singleSelect="true">
@@ -47,7 +44,6 @@ Identificación
     </table>
     <div id="toolbar">
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">Nuevo Activo</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Validar Activo</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Borrar Activo</a>
         
         <div style="margin-bottom:10px">
@@ -102,14 +98,7 @@ Identificación
             $('#fm').form('clear');
             url = '../models/guardar.php';
         }
-        function editUser(){
-            var row = $('#dg').datagrid('getSelected');
-            if (row){
-                $('#dlg').dialog('open').dialog('center').dialog('setTitle','Editar Activo');
-                $('#fm').form('load', row);
-                url = '../models/editar.php';
-            }
-        }
+
         function saveUser(){
             $('#fm').form('submit',{
                 url: url,
