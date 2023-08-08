@@ -1,0 +1,15 @@
+*{
+background-color: rgb(230, 253, 253);
+}
+body{
+    margin-top: 180px;
+    text-align: center;
+}
+.button {
+    background-color: black;
+    color: white;
+    /* Agrega otros estilos si lo deseas */
+    width: 130px;
+    height: 60px;
+    
+  }

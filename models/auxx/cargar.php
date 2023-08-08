@@ -1,6 +1,6 @@
 <?php
-include 'conexion.php';
-$SqlSelect= "SELECT id_act,nombre_act,clasif_act, valoracion_act from id WHERE valoracion_act IS null";
+include '../conexion.php';
+$SqlSelect= "SELECT id,origen_ame,categoria_ame,nombre_ame,valor_ame, descripcion_ame from riesgos ";
 $respuesta= $conn->query($SqlSelect);
 $result=array();
 if($respuesta->num_rows>0){

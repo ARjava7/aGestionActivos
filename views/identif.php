@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/estilos.css">
     <meta charset="UTF-8">
-    <title>ACTIVOS</title>
+    <title>IDENTIFICACIÓN</title>
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.10.1/themes/black/easyui.css">
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.10.1/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.10.1/themes/color.css">
@@ -16,10 +16,14 @@
 
     <nav>
     <ul>
-        <li><a href="identif.php">Identificación</a></li>
-        <li><a href="validar.php">Validar</a></li>
-        <li><a href="valid.php">Validado</a></li>
-</ul>
+        <li><button class="button" name="button" onclick="window.location.href='identif.php'">Identificación Activos</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='validar.php'">Valorar Activos</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='valid.php'">Activos Valorados</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='identifAmenazas.php'">Identificación Amenazas</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='controles.php'">Controles</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='afectaciones.php'">Riesgos</button></li>
+        <li><button class="button" name="button" onclick="window.location.href='riesgos.php'">Controles Mitigación</button></li>
+    </ul>
 </nav>
 
  
@@ -32,11 +36,8 @@
                 <th field="id_act" width="10">#</th>
                 <th field="ubi_act" width="50">UBICACIÓN</th>
                 <th field="depar_act" width="50">DEPARTAMENTO</th>
-                <th field="tipo_act" width="40">IDENTIFICACIÓN</th>
-                <th field="categ_act" width="50">CATEGORIZACIÓN</th>
                 <th field="clasif_act" width="50">CLASIFICACIÓN</th>
                 <th field="nombre_act" width="50">NOMBRE</th>
-                <th field="tipo_info" width="80">CLASIFICACIÓN DE LA INFORMACIÓN</th>
                 <th field="responsable_act" width="50">RESPONSABLE</th>
                 
             </tr>
@@ -53,33 +54,34 @@
         
     </div>
     
-    <div id="dlg" class="easyui-dialog" style="width:400px" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
-        <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+    <div id="dlg" class="easyui-dialog" style="width:500px" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
+        <form id="fm" method="post" novalidate style="margin:0;padding:20px 80px">
             <h3>Información del Activo</h3>
             <div style="margin-bottom:10px">
-                <input name="ubi_act" class="easyui-textbox" required="true" label="Ubicación:" style="width:100%">
+                <input name="ubi_act" class="easyui-textbox" required="true" label="Ubicación:" data-options="prompt:'Ej: Oficina, DataCenter '" style="width:100%" maxlength="50">
+            </div>
+            
+            <div style="margin-bottom:10px">
+                <input name="depar_act" class="easyui-textbox" required="true" label="Departamento:" data-options="prompt:'Ej: TI, Ventas '" style="width:100%">
+            </div>
+           
+            <div style="margin-bottom:10px">
+                <input name="clasif_act" class="easyui-textbox" required="true" label="Clasificación :" data-options="prompt:'Ej: Elemento Prioritario, Elemento de Servicio '" style="width:100%">
             </div>
             <div style="margin-bottom:10px">
-                <input name="depar_act" class="easyui-textbox" required="true" label="Departamento:" style="width:100%">
+                <input name="nombre_act" class="easyui-textbox" required="true" label="Nombre:" data-options="prompt:'Ej: Laptop, DHCP '" style="width:100%">
             </div>
+          
             <div style="margin-bottom:10px">
-                <input name="tipo_act" class="easyui-textbox" required="true" label="Identificación:" style="width:100%">
+                <input name="responsable_act" class="easyui-textbox" required="true" label="Responsable:" data-options="prompt:'Ej: Luis Perez, Jorge Romo '" style="width:100%">
             </div>
-            <div style="margin-bottom:10px">
-                <input name="categ_act" class="easyui-textbox" required="true" label="Categorización :" style="width:100%">
-            </div>
-            <div style="margin-bottom:10px">
-                <input name="clasif_act" class="easyui-textbox" required="true" label="Clasificaión :" style="width:100%">
-            </div>
-            <div style="margin-bottom:10px">
-                <input name="nombre_act" class="easyui-textbox" required="true" label="Nombre:" style="width:100%">
-            </div>
-            <div style="margin-bottom:10px">
-                <input name="tipo_info" class="easyui-textbox" required="true" label="Clasificaión de la Información :" style="width:100%">
-            </div>
-            <div style="margin-bottom:10px">
-                <input name="responsable_act" class="easyui-textbox" required="true" label="Responsable:" style="width:100%">
-            </div>
+            <style>
+.textbox-label {
+  width: 170px; /* Ajusta el ancho según tus necesidades */
+  text-align: right; /* Alínea el texto a la derecha */
+  padding-right: 5px; /* Agrega un poco de espacio entre el label y el input */
+}
+</style>
    
         </form>
     </div>
